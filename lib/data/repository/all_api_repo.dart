@@ -1,16 +1,35 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
+import 'package:hamon_classroom/core/apiService/api_service.dart';
+import 'package:hamon_classroom/core/apiService/api_urls.dart';
+import 'package:hamon_classroom/data/entity/classroomsEntity/list_classroom_entity.dart';
+import 'package:hamon_classroom/data/entity/studentsEntity/list_students_entity.dart';
+import 'package:hamon_classroom/data/entity/subjectsEntity/list_subjects_entity.dart';
 import 'package:hamon_classroom/data/handler/error_handler.dart';
 import 'package:hamon_classroom/data/model/data_model.dart';
 
 class AllApiRepo {
-  // static Future<DataModel<TokenRestEntity?>> getTokenRest(LoginModel data) =>
-  //     tryCatchFunction<TokenRestEntity>(
-  //       method: () => AuthRepo.getTokenRest(data),
-  //     );
+  // classrooms
+  static Future<DataModel<ListClassroomsEntity?>> getClassrooms() =>
+      tryCatchFunction<ListClassroomsEntity>(
+        method: () => client.getClassrooms(ApiUrls.apiKey),
+      );
+  
+  // students
+  static Future<DataModel<ListStudentsEntity?>> getStundents() =>
+      tryCatchFunction<ListStudentsEntity>(
+        method: () => client.getStundents(ApiUrls.apiKey),
+      );
+  
+  // subjects
+  static Future<DataModel<ListSubjectsEntity?>> getSubjects() =>
+      tryCatchFunction<ListSubjectsEntity>(
+        method: () => client.getSubjects(ApiUrls.apiKey),
+      );
 }
 
+////////////////////////////////////////////////////////////////////////////////
 // try-catch-function
 Future<DataModel<T?>> tryCatchFunction<T>({required Function method}) async {
   print(method.toString());

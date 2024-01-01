@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hamon_classroom/presentation/dashboard/ui/dashboard_screen.dart';
+import 'package:hamon_classroom/presentation/spashScreen/ui/splash_screen.dart';
 
 class Routes {
   static Route<dynamic> generateRoute(RouteSettings routeSettings) {
@@ -9,10 +10,15 @@ class Routes {
         {
           return _route(DashboardScreen(), routeSettings);
         }
+      
+      case SplashScreen.routeName:
+        {
+          return _route(SplashScreen(), routeSettings);
+        }
 
       default:
         {
-          return _route(DashboardScreen(), routeSettings);
+          return _route(SplashScreen(), routeSettings);
         }
     }
   }

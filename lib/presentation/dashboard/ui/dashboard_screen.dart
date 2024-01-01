@@ -7,8 +7,12 @@ class DashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Container(),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+      ),
+      body: Container(
+        child: Placeholder(),
+      ),
     );
   }
 }

@@ -2,6 +2,9 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:hamon_classroom/core/apiService/api_urls.dart';
+import 'package:hamon_classroom/data/entity/classroomsEntity/list_classroom_entity.dart';
+import 'package:hamon_classroom/data/entity/studentsEntity/list_students_entity.dart';
+import 'package:hamon_classroom/data/entity/subjectsEntity/list_subjects_entity.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'api_service.g.dart';
@@ -34,19 +37,19 @@ abstract class ApiServices {
   
   //classrooms
   @GET('/classrooms')
-  Future getClassrooms(
+  Future<ListClassroomsEntity> getClassrooms(
     @Query('api_key') String apikey,
   );
   
   //students
   @GET('/students')
-  Future getStundents(
+  Future<ListStudentsEntity> getStundents(
     @Query('api_key') String apikey,
   );
   
   //subjects
   @GET('/subjects')
-  Future getSubjects(
+  Future<ListSubjectsEntity> getSubjects(
     @Query('api_key') String apikey,
   );
 }
