@@ -25,45 +25,51 @@ class ClassroomScreen extends StatelessWidget {
             if (state is ClassroomLoaded) {
               final dv = state.data?.classrooms;
 
-              return SingleChildScrollView(
-                child: Column(
-                  children: [
-                    headerWidget(
-                        'Class rooms',),
-                    SizedBox(height: 10),
-                    ListView.builder(
-                      physics: const NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemCount: state.data?.classrooms?.length ?? 0,
-                      itemBuilder: (context, index) {
-                        return Container(
-                          margin:
-                              EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-                          decoration: BoxDecoration(
-                            color: Colors.red.withOpacity(.2),
-                            borderRadius: BorderRadius.circular(5),
-                          ),
-                          child: InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(
-                                  context, ClassroomDetailsScreen.routeName,
-                                  arguments: dv?[index]);
-                            },
-                            child: ListTile(
-                              title: Text(dv?[index].name ?? 'N/A'),
-                              subtitle: Text(dv?[index].layout ?? 'N/A'),
-                              trailing: Column(
-                                children: [
-                                  Text((dv?[index].size ?? '0').toString()),
-                                  Text("Seats"),
-                                ],
+              return RefreshIndicator(
+                onRefresh: () async {
+                  BlocProvider.of<ClassroomCubit>(context).getclassroom();
+                },
+                child: SingleChildScrollView(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  child: Column(
+                    children: [
+                      headerWidget(
+                          'Class rooms',),
+                      SizedBox(height: 10),
+                      ListView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
+                        itemCount: state.data?.classrooms?.length ?? 0,
+                        itemBuilder: (context, index) {
+                          return Container(
+                            margin:
+                                EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                            decoration: BoxDecoration(
+                              color: Colors.red.withOpacity(.2),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(
+                                    context, ClassroomDetailsScreen.routeName,
+                                    arguments: dv?[index]);
+                              },
+                              child: ListTile(
+                                title: Text(dv?[index].name ?? 'N/A'),
+                                subtitle: Text(dv?[index].layout ?? 'N/A'),
+                                trailing: Column(
+                                  children: [
+                                    Text((dv?[index].size ?? '0').toString()),
+                                    Text("Seats"),
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                        );
-                      },
-                    ),
-                  ],
+                          );
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               );
             }

@@ -29,45 +29,51 @@ class StudentScreen extends StatelessWidget {
             if (state is StudentLoaded) {
               final dv = state.data?.students;
 
-              return SingleChildScrollView(
-                child: Column(
-                  children: [
-                    headerWidget(
-                      'Students',),
-                    SizedBox(height: 10),
-                    ListView.builder(
-                      physics: const NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemCount: state.data?.students?.length ?? 0,
-                      itemBuilder: (context, index) {
-                        return InkWell(
-                          onTap: () {
-                            Navigator.pushNamed(
-                                context, StudentDetailsScreen.routeName,
-                                arguments: state.data?.students?[index]);
-                          },
-                          child: Container(
-                            margin: EdgeInsets.symmetric(
-                                horizontal: 15, vertical: 5),
-                            decoration: BoxDecoration(
-                              color: Colors.red.withOpacity(.2),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: ListTile(
-                              title: Text(dv?[index].name ?? 'N/A'),
-                              subtitle: Text(dv?[index].email ?? 'N/A'),
-                              trailing: Column(
-                                children: [
-                                  Text((dv?[index].age ?? '0').toString()),
-                                  Text("Age"),
-                                ],
+              return RefreshIndicator(
+                onRefresh: () async {
+                  BlocProvider.of<StudentsCubit>(context).getStudents();
+                },
+                child: SingleChildScrollView(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  child: Column(
+                    children: [
+                      headerWidget(
+                        'Students',),
+                      SizedBox(height: 10),
+                      ListView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
+                        itemCount: state.data?.students?.length ?? 0,
+                        itemBuilder: (context, index) {
+                          return InkWell(
+                            onTap: () {
+                              Navigator.pushNamed(
+                                  context, StudentDetailsScreen.routeName,
+                                  arguments: state.data?.students?[index]);
+                            },
+                            child: Container(
+                              margin: EdgeInsets.symmetric(
+                                  horizontal: 15, vertical: 5),
+                              decoration: BoxDecoration(
+                                color: Colors.red.withOpacity(.2),
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: ListTile(
+                                title: Text(dv?[index].name ?? 'N/A'),
+                                subtitle: Text(dv?[index].email ?? 'N/A'),
+                                trailing: Column(
+                                  children: [
+                                    Text((dv?[index].age ?? '0').toString()),
+                                    Text("Age"),
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                        );
-                      },
-                    ),
-                  ],
+                          );
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               );
             }
