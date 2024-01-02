@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:hamon_classroom/data/entity/classroomsEntity/list_classroom_entity.dart';
+import 'package:hamon_classroom/data/model/data_model.dart';
 import 'package:hamon_classroom/data/repository/all_api_repo.dart';
 import 'package:meta/meta.dart';
 
@@ -14,7 +15,7 @@ class ClassroomCubit extends Cubit<ClassroomState> {
     if(response.status == 'success') {
       emit(ClassroomLoaded(response.data));
     } else {
-      emit(ClassroomError());
+      emit(ClassroomError(response));
     }
   }
 

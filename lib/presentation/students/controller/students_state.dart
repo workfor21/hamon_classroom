@@ -10,4 +10,8 @@ class StudentLoaded extends StudentsState {
 
   StudentLoaded(this.data);
 }
-class StudentError extends StudentsState {}
+class StudentError extends StudentsState {
+  DataModel? error;
+
+  StudentError(this.error);
+}

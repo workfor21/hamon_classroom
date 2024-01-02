@@ -5,6 +5,9 @@ import 'package:hamon_classroom/presentation/dashboard/ui/dashboard_screen.dart'
 import 'package:hamon_classroom/presentation/registration/ui/registration_screen.dart';
 import 'package:hamon_classroom/presentation/spashScreen/ui/splash_screen.dart';
 import 'package:hamon_classroom/presentation/students/ui/student_screen.dart';
+import 'package:hamon_classroom/presentation/students/ui/student_details_screen.dart';
+import 'package:hamon_classroom/presentation/subjects/ui/subject_details_screen.dart';
+import 'package:hamon_classroom/presentation/subjects/ui/subject_details_screen.dart';
 import 'package:hamon_classroom/presentation/subjects/ui/subject_screen.dart';
 import 'package:hamon_classroom/presentation/subjects/ui/subject_screen.dart';
 
@@ -45,6 +48,16 @@ class Routes {
       case RegistrationScreen.routeName:
         {
           return _route(RegistrationScreen(), routeSettings);
+        }
+
+        case StudentDetailsScreen.routeName:
+        {
+          return _route(StudentDetailsScreen(), routeSettings);
+        }
+
+        case SubjectDetailsScreen.routeName:
+        {
+          return _route(SubjectDetailsScreen(), routeSettings);
         }
 
       default:

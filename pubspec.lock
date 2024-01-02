@@ -483,6 +483,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
+  sizable:
+    dependency: "direct dev"
+    description:
+      name: sizable
+      sha256: "1e22eddf81fce574a4dcabe755ab6c763e59a78311af6b8d27ad89e8d013a987"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.4"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -626,4 +634,4 @@ packages:
     version: "3.1.2"
 sdks:
   dart: ">=3.1.0 <4.0.0"
-  flutter: ">=1.16.0"
+  flutter: ">=1.17.0"

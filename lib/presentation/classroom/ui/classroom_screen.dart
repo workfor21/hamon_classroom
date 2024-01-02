@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hamon_classroom/presentation/!components/custom_asset_image_widget.dart';
 import 'package:hamon_classroom/presentation/!components/header_widget.dart';
 import 'package:hamon_classroom/presentation/!components/loading_widget.dart';
 import 'package:hamon_classroom/presentation/classroom/controller/classroom_cubit.dart';
@@ -67,9 +68,17 @@ class ClassroomScreen extends StatelessWidget {
               );
             }
 
-            // if(state is ClassroomError) {
-            //
-            // }
+            if(state is ClassroomError) {
+              return Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    customAssetsImage('assets/images/error.png',size: 150),
+                    headerWidget(state.error?.msg ?? "",),
+                  ],
+                ),
+              );
+            }
 
             return SizedBox();
           },

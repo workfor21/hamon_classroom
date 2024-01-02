@@ -10,4 +10,8 @@ class SubjectLoaded extends SubjectState {
 
   SubjectLoaded(this.data);
 }
-class SubjectError extends SubjectState {}
+class SubjectError extends SubjectState {
+  DataModel? error;
+
+  SubjectError(this.error);
+}

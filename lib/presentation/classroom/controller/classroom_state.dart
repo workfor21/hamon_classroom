@@ -10,4 +10,8 @@ class ClassroomLoaded extends ClassroomState {
 
   ClassroomLoaded(this.data);
 }
-class ClassroomError extends ClassroomState {}
+class ClassroomError extends ClassroomState {
+  DataModel? error;
+
+  ClassroomError(this.error);
+}

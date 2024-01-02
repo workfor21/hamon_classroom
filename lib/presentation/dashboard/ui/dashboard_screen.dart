@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hamon_classroom/presentation/dashboard/controller/dashboard_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:sizable/sizable.dart';
 
 class DashboardScreen extends StatelessWidget {
   static const String routeName = "DashboardScreen";
@@ -44,6 +45,7 @@ class DashboardScreen extends StatelessWidget {
                 ),
                 body: Column(
                   children: [
+                    80.sizeh,
                     value.isGrid != true
                         ? SizedBox()
                         : GridView.builder(
