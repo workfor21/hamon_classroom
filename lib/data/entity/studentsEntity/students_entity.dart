@@ -7,7 +7,7 @@ part 'students_entity.g.dart';
 class StudentsEntity with _$StudentsEntity {
   const factory StudentsEntity({
             int? id,
-     String? age,
+     int? age,
             String? email,
             String? name,
   }) = _StudentsEntity;

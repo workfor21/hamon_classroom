@@ -9,7 +9,7 @@ class ClassroomsEntity with _$ClassroomsEntity {
      int? id,
             String? layout,
             String? name,
-            String? size,
+            int? size,
   }) = _ClassroomsEntity;
 
   factory ClassroomsEntity.fromJson(Map<String,dynamic> json) => _$ClassroomsEntityFromJson(json);

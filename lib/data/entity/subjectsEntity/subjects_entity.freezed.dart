@@ -21,7 +21,7 @@ SubjectsEntity _$SubjectsEntityFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$SubjectsEntity {
   int? get id => throw _privateConstructorUsedError;
-  String? get credits => throw _privateConstructorUsedError;
+  int? get credits => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get teacher => throw _privateConstructorUsedError;
 
@@ -37,7 +37,7 @@ abstract class $SubjectsEntityCopyWith<$Res> {
           SubjectsEntity value, $Res Function(SubjectsEntity) then) =
       _$SubjectsEntityCopyWithImpl<$Res, SubjectsEntity>;
   @useResult
-  $Res call({int? id, String? credits, String? name, String? teacher});
+  $Res call({int? id, int? credits, String? name, String? teacher});
 }
 
 /// @nodoc
@@ -66,7 +66,7 @@ class _$SubjectsEntityCopyWithImpl<$Res, $Val extends SubjectsEntity>
       credits: freezed == credits
           ? _value.credits
           : credits // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -87,7 +87,7 @@ abstract class _$$SubjectsEntityImplCopyWith<$Res>
       __$$SubjectsEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? id, String? credits, String? name, String? teacher});
+  $Res call({int? id, int? credits, String? name, String? teacher});
 }
 
 /// @nodoc
@@ -114,7 +114,7 @@ class __$$SubjectsEntityImplCopyWithImpl<$Res>
       credits: freezed == credits
           ? _value.credits
           : credits // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -138,7 +138,7 @@ class _$SubjectsEntityImpl implements _SubjectsEntity {
   @override
   final int? id;
   @override
-  final String? credits;
+  final int? credits;
   @override
   final String? name;
   @override
@@ -182,7 +182,7 @@ class _$SubjectsEntityImpl implements _SubjectsEntity {
 abstract class _SubjectsEntity implements SubjectsEntity {
   const factory _SubjectsEntity(
       {final int? id,
-      final String? credits,
+      final int? credits,
       final String? name,
       final String? teacher}) = _$SubjectsEntityImpl;
 
@@ -192,7 +192,7 @@ abstract class _SubjectsEntity implements SubjectsEntity {
   @override
   int? get id;
   @override
-  String? get credits;
+  int? get credits;
   @override
   String? get name;
   @override

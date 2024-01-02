@@ -9,7 +9,7 @@ part of 'students_entity.dart';
 _$StudentsEntityImpl _$$StudentsEntityImplFromJson(Map<String, dynamic> json) =>
     _$StudentsEntityImpl(
       id: json['id'] as int?,
-      age: json['age'] as String?,
+      age: json['age'] as int?,
       email: json['email'] as String?,
       name: json['name'] as String?,
     );

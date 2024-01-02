@@ -21,7 +21,7 @@ StudentsEntity _$StudentsEntityFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$StudentsEntity {
   int? get id => throw _privateConstructorUsedError;
-  String? get age => throw _privateConstructorUsedError;
+  int? get age => throw _privateConstructorUsedError;
   String? get email => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
 
@@ -37,7 +37,7 @@ abstract class $StudentsEntityCopyWith<$Res> {
           StudentsEntity value, $Res Function(StudentsEntity) then) =
       _$StudentsEntityCopyWithImpl<$Res, StudentsEntity>;
   @useResult
-  $Res call({int? id, String? age, String? email, String? name});
+  $Res call({int? id, int? age, String? email, String? name});
 }
 
 /// @nodoc
@@ -66,7 +66,7 @@ class _$StudentsEntityCopyWithImpl<$Res, $Val extends StudentsEntity>
       age: freezed == age
           ? _value.age
           : age // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -87,7 +87,7 @@ abstract class _$$StudentsEntityImplCopyWith<$Res>
       __$$StudentsEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? id, String? age, String? email, String? name});
+  $Res call({int? id, int? age, String? email, String? name});
 }
 
 /// @nodoc
@@ -114,7 +114,7 @@ class __$$StudentsEntityImplCopyWithImpl<$Res>
       age: freezed == age
           ? _value.age
           : age // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -138,7 +138,7 @@ class _$StudentsEntityImpl implements _StudentsEntity {
   @override
   final int? id;
   @override
-  final String? age;
+  final int? age;
   @override
   final String? email;
   @override
@@ -182,7 +182,7 @@ class _$StudentsEntityImpl implements _StudentsEntity {
 abstract class _StudentsEntity implements StudentsEntity {
   const factory _StudentsEntity(
       {final int? id,
-      final String? age,
+      final int? age,
       final String? email,
       final String? name}) = _$StudentsEntityImpl;
 
@@ -192,7 +192,7 @@ abstract class _StudentsEntity implements StudentsEntity {
   @override
   int? get id;
   @override
-  String? get age;
+  int? get age;
   @override
   String? get email;
   @override

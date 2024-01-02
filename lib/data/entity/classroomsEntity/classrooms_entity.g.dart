@@ -12,7 +12,7 @@ _$ClassroomsEntityImpl _$$ClassroomsEntityImplFromJson(
       id: json['id'] as int?,
       layout: json['layout'] as String?,
       name: json['name'] as String?,
-      size: json['size'] as String?,
+      size: json['size'] as int?,
     );
 
 Map<String, dynamic> _$$ClassroomsEntityImplToJson(

@@ -23,7 +23,7 @@ mixin _$ClassroomsEntity {
   int? get id => throw _privateConstructorUsedError;
   String? get layout => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
-  String? get size => throw _privateConstructorUsedError;
+  int? get size => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,7 +37,7 @@ abstract class $ClassroomsEntityCopyWith<$Res> {
           ClassroomsEntity value, $Res Function(ClassroomsEntity) then) =
       _$ClassroomsEntityCopyWithImpl<$Res, ClassroomsEntity>;
   @useResult
-  $Res call({int? id, String? layout, String? name, String? size});
+  $Res call({int? id, String? layout, String? name, int? size});
 }
 
 /// @nodoc
@@ -74,7 +74,7 @@ class _$ClassroomsEntityCopyWithImpl<$Res, $Val extends ClassroomsEntity>
       size: freezed == size
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
     ) as $Val);
   }
 }
@@ -87,7 +87,7 @@ abstract class _$$ClassroomsEntityImplCopyWith<$Res>
       __$$ClassroomsEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? id, String? layout, String? name, String? size});
+  $Res call({int? id, String? layout, String? name, int? size});
 }
 
 /// @nodoc
@@ -122,7 +122,7 @@ class __$$ClassroomsEntityImplCopyWithImpl<$Res>
       size: freezed == size
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
     ));
   }
 }
@@ -142,7 +142,7 @@ class _$ClassroomsEntityImpl implements _ClassroomsEntity {
   @override
   final String? name;
   @override
-  final String? size;
+  final int? size;
 
   @override
   String toString() {
@@ -184,7 +184,7 @@ abstract class _ClassroomsEntity implements ClassroomsEntity {
       {final int? id,
       final String? layout,
       final String? name,
-      final String? size}) = _$ClassroomsEntityImpl;
+      final int? size}) = _$ClassroomsEntityImpl;
 
   factory _ClassroomsEntity.fromJson(Map<String, dynamic> json) =
       _$ClassroomsEntityImpl.fromJson;
@@ -196,7 +196,7 @@ abstract class _ClassroomsEntity implements ClassroomsEntity {
   @override
   String? get name;
   @override
-  String? get size;
+  int? get size;
   @override
   @JsonKey(ignore: true)
   _$$ClassroomsEntityImplCopyWith<_$ClassroomsEntityImpl> get copyWith =>

@@ -9,7 +9,7 @@ part of 'subjects_entity.dart';
 _$SubjectsEntityImpl _$$SubjectsEntityImplFromJson(Map<String, dynamic> json) =>
     _$SubjectsEntityImpl(
       id: json['id'] as int?,
-      credits: json['credits'] as String?,
+      credits: json['credits'] as int?,
       name: json['name'] as String?,
       teacher: json['teacher'] as String?,
     );
