@@ -484,7 +484,7 @@ packages:
     source: hosted
     version: "1.0.4"
   sizable:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: sizable
       sha256: "1e22eddf81fce574a4dcabe755ab6c763e59a78311af6b8d27ad89e8d013a987"
